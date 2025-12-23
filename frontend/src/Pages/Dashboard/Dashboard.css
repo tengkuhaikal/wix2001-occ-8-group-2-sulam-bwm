@@ -1,0 +1,170 @@
+.dashboard-container {
+    min-height: 100vh;
+}
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    padding: 20px 5%;
+}
+
+.video-card {
+    padding: 12px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* Hover Effect: Uses the color from our JSON data */
+.video-card:hover {
+    background-color: rgba(var(--card-color), 0.08);
+    /* 8% opacity tint */
+}
+
+.video-card:hover .video-title {
+    color: rgb(var(--card-color));
+    /* Title matches theme color on hover */
+}
+
+/* Labels on the thumbnail */
+.media-label {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Use the same variable for the label background if you want them to match exactly */
+.media-label {
+    background-color: rgb(var(--card-color));
+}
+
+.thumbnail-container {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover .thumbnail {
+    transform: scale(1.05);
+    /* Slight zoom on hover */
+}
+
+.thumbnail-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-time {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 2px 4px;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.video-details {
+    display: flex;
+    margin-top: 12px;
+    gap: 12px;
+}
+
+.channel-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.video-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.h3-video-title {
+    font-size: .9rem;
+    font-weight: 600;
+    color: #0f0f0f;
+    margin: 0 0 4px 0;
+    display: -webkit-box;
+    /* Multi-line truncation */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: left;
+}
+
+.channel-name,
+.video-stats,
+.video-title {
+    font-size: 14px;
+    color: #606060;
+    margin: 0;
+    text-align: left;
+}
+
+.channel-name:hover {
+    color: #0f0f0f;
+}
+
+.category-bar {
+    display: flex;
+    gap: 12px;
+    margin: 0.5%;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    justify-content: center;
+}
+
+.category-bar::-webkit-scrollbar {
+    display: none;
+    /* Hides scrollbar for Chrome/Safari */
+}
+
+.category-chip {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.05);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.category-chip:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.category-chip.active {
+    background-color: #0f0f0f;
+    color: white;
+}

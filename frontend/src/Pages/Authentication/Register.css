@@ -1,0 +1,150 @@
+.register-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Keeps the side-by-side layout */
+    gap: 40px;
+    /* Adds space between the form and the image */
+
+    max-width: 1200px;
+    /* Limits how wide the form can get */
+    margin: 0 auto;
+    /* Centers the container horizontally */
+    padding: 0 20px;
+    /* Adds a "safety" margin for small screens */
+
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    /* Centers content vertically */
+}
+
+/* Form container centering */
+.form-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+form {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-header {
+    margin-bottom: 20px;
+}
+
+.brand-name {
+    color: var(--brand-green-primary);
+    /* Use your universal color */
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.header-h1, .header-p {
+    text-align: left;
+}
+
+form h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+form p {
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: var(--brand-green-primary);
+    outline: none;
+    box-shadow: 0 0 5px rgba(143, 198, 181, 0.5);
+}
+
+.primary-btn {
+    background-color: var(--brand-green-primary);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: var(--transition);
+    align-content: center;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--brand-green-primary);
+    padding: 14px;
+    border: var(--brand-green-primary) 1px solid;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: var(--transition);
+}
+
+.primary-btn:hover, .secondary-btn:hover {
+    border-radius: var(--border-radius-hover);
+}
+
+.footer-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-text span {
+    color: var(--brand-green-primary);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Image Side */
+.img-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    width: 100%;
+}
+
+.login-image {
+    
+    width: 75%;
+    height: 85%;
+    object-fit: cover;
+    /* High quality fill */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .register-container {
+        grid-template-columns: 1fr;
+        /* Stack vertically on mobile */
+    }
+
+    .img-card {
+        display: none;
+        /* Hide image on mobile for faster loading */
+    }
+}

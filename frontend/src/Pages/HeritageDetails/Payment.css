@@ -1,0 +1,193 @@
+/* Container Background */
+.payment-page {
+    background-color: #f4f7f9;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* The Main Card */
+.payment-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.amount-summary {
+    display: flex;
+    flex-direction: column;
+}
+
+.final-price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--brand-green-primary);
+}
+
+.payment-title {
+    color: var(--brand-green-primary);
+    border-bottom: 1px solid #1a5e4e;
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+/* Payment Option Row */
+.payment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.payment-option:hover {
+    background-color: #f9f9f9;
+    border: var(--brand-green-primary) 1px solid;
+}
+
+/* Active/Selected State */
+.payment-option.active {
+    border-color: var(--brand-green-primary);
+    /* Purple accent from image */
+    background-color: #fdfcff;
+    box-shadow: 0 0 0 1px var(--brand-green-primary);
+}
+
+.method-main-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.method-icon {
+    font-size: 20px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    width: 30px;
+}
+
+.method-info h3 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0;
+    color: #333;
+}
+
+/* The Checkbox/Arrow indicator */
+.selection-arrow {
+    color: #d1d1d1;
+    transition: transform 0.3s ease;
+}
+
+.selection-arrow.open {
+    transform: rotate(180deg);
+    color: var(--brand-green-primary);
+}
+
+/* Dropdown styling */
+.inline-provider-container {
+    margin-top: -8px;
+    margin-bottom: 8px;
+    padding: 0 12px 12px 12px;
+    border: 1px solid var(--brand-green-primary);
+    border-top: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #fdfcff;
+}
+
+.choice-selected.open {
+    padding: 15px;
+    border: var(--brand-green-light) 1px solid;
+    margin: 5px;
+    border-radius: var(--border-radius);
+}
+
+.choice-selected.close{
+    display: none;
+}
+
+.dropdown-toggle-sub {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.dropdown-menu-inline {
+    list-style: none;
+    padding: 10px 0;
+    margin-top: 5px;
+    border-radius: 4px;
+    min-width: 140px;
+    color: var(--brand-green-primary);
+    width: 100%;
+    text-align: left;
+}
+
+.dropdown-menu-inline li {
+    margin: 10px;
+    border: var(--brand-green-light) 1px solid;
+    border-radius: var(--border-radius);
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.dropdown-menu-inline li:hover {
+    border: var(--brand-green-primary) 1px solid;
+}
+
+/* Footer & Buttons */
+.payment-footer {
+    margin-top: 24px;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* .primary-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+} */
+
+.pay-now-btn {
+    width: 100%;
+}
+
+.pay-now-btn:disabled {
+    background-color: var(--brand-green-softer);
+    color: var(--text-white);
+    cursor: not-allowed;
+}
+
+/* Go Back style */
+.go-back-btn {
+    background-color: transparent;
+    color: #666;
+    border: 1px solid #ddd;
+}
