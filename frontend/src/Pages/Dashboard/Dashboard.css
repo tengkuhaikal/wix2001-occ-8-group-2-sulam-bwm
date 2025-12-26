@@ -142,6 +142,7 @@
     white-space: nowrap;
     scrollbar-width: none;
     justify-content: center;
+    padding: 0 5%;
 }
 
 .category-bar::-webkit-scrollbar {
@@ -167,4 +168,19 @@
 .category-chip.active {
     background-color: #0f0f0f;
     color: white;
+}
+
+@media (max-width: 780px) {
+    .category-bar {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+        justify-content: flex-start;
+    }
+
+    /* For Chrome/Safari, hide scrollbar */
+    /* .category-bar::-webkit-scrollbar {
+        display: none;
+    } */
 }

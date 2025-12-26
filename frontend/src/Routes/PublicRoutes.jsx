@@ -9,7 +9,7 @@ import Dashboard from '../Pages/Dashboard/Dashboard'; // Example private route
 import HeritageDetails from '../Pages/HeritageDetails/HeritageDetails'; // Example private route
 import BuyHeritage from '../Pages/HeritageDetails/BuyHeritage'; // Example private route
 import Payment from '../Pages/HeritageDetails/Payment'; // Example private route
-import PageNotFound from '../Pages/PageNotFound';
+import PageNotFound from '../Pages/ErrorHandling/PageNotFound';
 
 const PublicRoutes = () => {
     return (

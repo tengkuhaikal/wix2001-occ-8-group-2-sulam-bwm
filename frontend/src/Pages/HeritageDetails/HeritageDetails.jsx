@@ -59,6 +59,7 @@ const HeritageDetails = () => {
                             key={item.fileSource}
                             autoPlay
                             controls
+                            controlsList='nodownload'
                             className="main-viewer"
                         // poster={item.thumbnail} // Shows thumbnail until play is clicked
                         >

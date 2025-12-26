@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './PageNotFound.css';
-import SVGComponent from '../svgviewer-react-output';
+import SVGComponent from '../../svgviewer-react-output';
 
 const PageNotFound = () => {
     const navigate = useNavigate();

@@ -25,11 +25,34 @@
     display: block;
 }
 
-.nav-logo span {
-    margin-left: 1.2rem;
-    font-size: 1.5em;
+.logo-text {
     font-weight: bold;
-    color: var(--text-dark);
+    color: #333;
+    font-size: 1.1rem;
+    margin-left: 1.2rem;
+    
+    /* Truncation Logic */
+    white-space: nowrap;      /* Keeps text on one line */
+    overflow: hidden;         /* Hides the text that overflows */
+    text-overflow: ellipsis;  /* Adds the '...' automatically */
+    
+    display: inline-block;
+    max-width: 250px;         /* Adjust this based on your preference */
+    vertical-align: middle;
+}
+
+/* On smaller screens, make the text even shorter so the search bar fits */
+@media (max-width: 900px) {
+    .logo-text {
+        max-width: 100px;     /* This will result in "Badan War..." */
+    }
+}
+
+/* On very small screens (mobile), hide it to keep the search bar usable */
+@media (max-width: 600px) {
+    .logo-text {
+        display: none;
+    }
 }
 
 
@@ -40,14 +63,56 @@
     height: 100%;
     margin: 0 8px;
 }
-.dropdown-toggle {
+
+/* .dropdown-toggle {
     background: var(--brand-green-primary);
     color: white;
     border: 1px solid var(--brand-green-primary);
     padding: 8px 16px;
     border-radius: var(--border-radius);
     cursor: pointer;
-    transition: var(--transition)
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+} */
+
+.dropdown-toggle {
+    background: var(--brand-green-primary);
+    color: var(--text-white);
+    border: 1px solid var(--brand-green-primary);
+    padding: 6px 12px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    /* Prevent the button itself from growing/wrapping */
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.lang-label {
+    /* Truncation logic for the text inside the button */
+    display: inline-block;
+    max-width: 100px;
+    /* Limits the width of "Bahasa Melayu" */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+/* On very small screens, hide the text and show only the globe icon */
+@media (max-width: 500px) {
+    .lang-label {
+        display: none;
+    }
+
+    .dropdown-toggle {
+        padding: 6px 8px;
+        /* Slimmer padding for icon-only mode */
+    }
 }
 
 

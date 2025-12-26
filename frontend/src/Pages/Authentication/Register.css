@@ -138,13 +138,62 @@ input:focus {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+
+    /* Prevents the container from expanding beyond the viewport */
     .register-container {
         grid-template-columns: 1fr;
-        /* Stack vertically on mobile */
+        height: auto;
+        min-height: 100dvh;
+        /* Use 'dvh' for better mobile browser support */
+        width: 100%;
+        max-width: 100vw;
+        /* Explicitly limit width */
+        overflow-x: hidden;
+        /* Safety kill for horizontal scroll */
+        padding: 40px 20px;
+        /* Vertical space so it doesn't touch screen edges */
+        box-sizing: border-box;
+        /* Ensures padding doesn't add to width */
+        margin: 0;
+        gap: 0;
+        display: flex;
+        /* Flex is often safer than Grid for single-column mobile layouts */
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .form-section {
+        padding: 0;
+        width: 100%;
+        display: block;
+        /* Remove flex here to let the form width handle itself */
+    }
+
+    form {
+        width: 100%;
+        max-width: 100%;
+        /* Ensure it never exceeds the container */
+        margin: 0 auto;
+    }
+
+    /* Fix potential text overflow */
+    form h1,
+    form p,
+    .auth-header {
+        text-align: center;
+        word-wrap: break-word;
+        /* Prevents long words from pushing the width */
+    }
+
+    /* Ensure inputs stay inside the box */
+    input {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        /* Critical: includes padding in the 100% width */
     }
 
     .img-card {
         display: none;
-        /* Hide image on mobile for faster loading */
     }
 }

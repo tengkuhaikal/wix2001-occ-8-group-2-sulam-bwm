@@ -37,11 +37,57 @@
     border-radius: 0 20px 20px 0;
     border-left: none;
     cursor: pointer;
-    color: #008080;
+    color: var(--brand-green-primary);
     font-size: 0.9rem;
     transition: background-color 0.2s;
 }
 
 .search-button:hover {
     background-color: #f0f0f0;
+}
+
+/* Update your existing .input-section */
+.input-section {
+    display: flex;
+    flex: 1;
+    position: relative;
+    /* Crucial for positioning the 'X' button */
+}
+
+/* New styling for the erase button */
+.erase-button {
+    position: absolute;
+    right: 10px;
+    /* Positions it inside the right edge of the input */
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: #999;
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 2;
+}
+
+.erase-button:hover {
+    color: #666;
+}
+
+/* Slightly adjust .search-input to ensure text doesn't go under the 'X' */
+.search-input {
+    flex: 1;
+    padding: 0 35px 0 15px;
+    /* Added 35px padding-right */
+    border: 1px solid #ddd;
+    border-radius: 20px 0 0 20px;
+    background-color: #f9f9f9;
+    font-size: 0.9rem;
+    outline: none;
+    min-width: 0;
+    height: 100%;
+    margin: 0;
 }

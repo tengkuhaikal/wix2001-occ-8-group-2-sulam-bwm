@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
+
+import { IoLanguageOutline } from "react-icons/io5";
 import "./NavBar.css";
 
 import Search from "./Search";
@@ -42,14 +44,18 @@ const Navbar = () => {
         <nav className="global-navbar">
             <div className="nav-logo" onClick={() => navigate("/")}>
                 <img src="/bwm-logo.png" alt="BWM Logo" />
-                <span>Badan Warisan Malaysia</span>
+                <span className="logo-text">Badan Warisan Malaysia</span>
             </div>
 
             <Search className='search-bar' onsubmit={handleSearchChange} />
 
             <div className="language-dropdown">
                 <button className="dropdown-toggle" onClick={() => setIsOpen(!isOpen)}>
-                    {languageNames[i18n.language] || i18n.language.toUpperCase()} ▾
+                    <IoLanguageOutline />
+                    <span className="lang-label">
+                        {languageNames[i18n.language] || i18n.language.toUpperCase()}
+                    </span>
+                    ▾
                 </button>
 
                 {isOpen && (
