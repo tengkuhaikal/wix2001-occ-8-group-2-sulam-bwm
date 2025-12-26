@@ -48,6 +48,7 @@ const Register = () => {
                         value={phoneNumber}
                         onChange={(e) => setPhoneNumber(e.target.value)}
                     />
+                    <label for="dob">Date of Birth</label>
                     <input
                         type="date"
                         value={dob}

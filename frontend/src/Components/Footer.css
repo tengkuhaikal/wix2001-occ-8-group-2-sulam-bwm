@@ -48,3 +48,40 @@
     font-size: 0.85rem;
     color: var(--text-white);
 }
+
+@media (max-width: 768px) {
+    .footer-content {
+        /* Switch from 3 columns to 1 column stack */
+        grid-template-columns: 1fr;
+        text-align: center;
+        /* Center text for phone users */
+        gap: 30px;
+        /* Space between the logo, about, and connect sections */
+    }
+
+    .footer-section h4 {
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+    }
+
+    .footer-logo {
+        height: 60px;
+        /* Fix the height instead of percentage for consistency */
+        margin: 0 auto 10px auto;
+        display: block;
+    }
+
+    .footer-tagline {
+        font-size: 0.9rem;
+        max-width: 280px;
+        /* Prevent tagline from stretching too wide */
+        margin: 0 auto;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 20px;
+        padding-top: 20px;
+        text-align: center;
+    }
+}

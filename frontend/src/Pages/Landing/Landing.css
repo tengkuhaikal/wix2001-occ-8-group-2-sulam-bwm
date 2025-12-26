@@ -12,7 +12,7 @@ body {
     gap: 120px;
     flex: 1;
     background: white;
-    min-height: calc(100vh - 70px);
+    min-height: 100vh
 }
 
 .banner {
@@ -75,28 +75,74 @@ body {
 
 /* On smaller screens, stack columns */
 @media (max-width: 768px) {
-    .features-overlay {
-        grid-template-columns: 1fr;
+
+    /* 1. Prevent the banner from taking up the full 100vh 
+       This allows users to see a hint of the content below */
+    .banner {
+        height: 100vh;
     }
 
-    .left-side,
-    .right-side {
+    /* 2. Reposition the text overlay */
+    .image-overlay {
+        top: 60%;
+        /* Move text down slightly for better image visibility */
+        margin-left: 0;
+        padding: 0 20px;
+        /* Give it safe side-spacing */
         width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        /* Centering usually looks better on phone banners */
+        left: 0;
+        transform: translateY(-50%);
     }
 
-
-
-    .top-left h1 {
-        font-size: 2rem;
-        margin-bottom: 40px;
+    /* 3. Significantly reduce font sizes */
+    .image-overlay h1 {
+        font-size: 2.2rem;
+        /* Was 4rem */
+        line-height: 1.1;
+        margin-bottom: 15px;
     }
 
-    .features-overlay button {
+    .image-overlay p {
+        font-size: 1.1rem;
+        /* Was 1.7rem */
+        line-height: 1.4;
+        margin-bottom: 25px;
+    }
+
+    /* 4. Fix button layout */
+    .image-overlay .secondary-btn {
+        margin-left: 0;
+        /* Remove the left margin from desktop */
         margin-top: 10px;
+        /* Stack buttons vertically if they don't fit */
+        display: block;
+        /* Make buttons full width or block-level for easier tapping */
+        width: 100%;
+        /* max-width: 250px; */
+        margin-inline: auto;
+        /* Center buttons */
     }
 
-    .right-side {
-        padding: 0;
-        justify-content: center;
+    .primary-btn {
+        display: block;
+        width: 100%;
+        /* max-width: 250px; */
+        margin-inline: auto;
+    }
+
+    /* 5. Adjust general spacing */
+    .home-container {
+        gap: 60px;
+        /* Desktop gap of 120px is too much for phone scroll */
+    }
+
+    h2 {
+        margin-top: 30px;
+        font-size: 1.5rem;
+        padding: 0 20px;
+        text-align: center;
     }
 }

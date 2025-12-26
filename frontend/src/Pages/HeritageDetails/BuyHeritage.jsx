@@ -9,21 +9,21 @@ const BuyHeritage = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    
+
     // Safety: ensure id comparison works (string vs number)
     const item = heritageItems.find((h) => String(h.id) === String(id));
-    
+
     // Handle loading/error state if item doesn't exist
     if (!item) return <div className="cart-page">Item not found</div>;
-    
+
     // Create a dummy array of 20 items for testing scroll behavior
     const testItems = Array.from({ length: 10 }, (_, index) => ({
         ...item,
         uniqueKey: `${item.id}-${index}` // unique key for the loop
     }));
-    
+
     const totalPrice = testItems.reduce((acc, curr) => acc + Number(curr.price), 0);
-    
+
     const handleCheckout = () => {
         navigate(`/heritage/${id}/buy-content/payment`, {
             state: {
@@ -44,14 +44,16 @@ const BuyHeritage = () => {
                             <img className='thumbnail-buy' src={testItem.thumbnail} alt={t(testItem.title)} />
                         </div>
 
-                        <div className="item-details">
-                            <h3>{t(testItem.title)}</h3>
-                            <p className="category-text">{t(`categories.${testItem.category}`)}</p>
-                            <p className="desc-text">{t(`heritage.${testItem.id}.description`)}</p>
-                        </div>
+                        <div className="details-with-price">
+                            <div className="item-details">
+                                <h3>{t(testItem.title)}</h3>
+                                <p className="category-text">{t(`categories.${testItem.category}`)}</p>
+                                <p className="desc-text">{t(`heritage.${testItem.id}.description`)}</p>
+                            </div>
 
-                        <div className="item-price">
-                            <p className="price">RM{testItem.price}</p>
+                            <div className="item-price">
+                                <p className="price">RM{testItem.price}</p>
+                            </div>
                         </div>
                     </div>
                 ))}
