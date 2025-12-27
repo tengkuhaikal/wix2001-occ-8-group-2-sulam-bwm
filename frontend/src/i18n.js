@@ -54,6 +54,7 @@ const resources = {
             "login_subtitle": "Step back into the guardianship of Malaysia's soul. Your journey in preserving our living history continues here.",
             "btn_login": "Log into the Archive",
             "forgot_password": "Lost your way? Reset password",
+            'logout':'Log Out',
 
             // Dashboard Categories
             "categories": {
@@ -147,7 +148,14 @@ const resources = {
                 },
 
             },
-            'btn_back_to_dashboard': 'Back to Dashboard'
+            'btn_back_to_dashboard': 'Back to Dashboard',
+
+            // profile
+            'personal_details': 'Personal Details',
+            'save': 'Save',
+            'edit': 'Edit',
+            'member_label': 'Member',
+            'staff_label': 'Staff'
         },
 
     },
@@ -201,6 +209,7 @@ const resources = {
             "login_subtitle": "Melangkah kembali ke dalam naungan khazanah negara. Perjuangan anda dalam memelihara sejarah hidup kita bermula di sini.",
             "btn_login": "Log Masuk ke Arkib",
             "forgot_password": "Hilang arah? Tetap semula kata laluan",
+            'logout':'Log Keluar',
 
             // Dashboard Categories
             "categories": {
@@ -294,7 +303,14 @@ const resources = {
                 }
             },
 
-            'btn_back_to_dashboard': 'Kembali ke Laman Utama'
+            'btn_back_to_dashboard': 'Kembali ke Laman Utama',
+
+            // profile
+            'personal_details':'Butiran Peribadi',
+            'save': 'Simpan',
+            'edit': 'Edit',
+            'member_label': 'Ahli',
+            'staff_label': 'Staf'
         },
 
     }

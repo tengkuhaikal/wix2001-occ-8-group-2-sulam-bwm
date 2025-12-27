@@ -151,3 +151,88 @@
     flex-grow: 1;
     margin: 0 8px;
 }
+
+/* Container for both Language and Profile to keep them grouped on the right */
+.nav-right {
+    display: flex;
+    align-items: center;
+    /* Space between language button and profile */
+    margin: 0 8px;
+    flex-shrink: 0;
+}
+
+/* User Profile Styling */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 4px 10px;
+    border-radius: var(--border-radius);
+    transition: background 0.2s ease;
+    border: 1px solid transparent;
+    /* Prevents layout shift on hover */
+}
+
+.user-profile:hover {
+    background-color: #f5f5f5;
+    border-color: #e0e0e0;
+    border-radius: var(--border-radius-hover);
+}
+
+.profile-avatar-wrapper {
+    display: flex;
+    /* Enable flexbox */
+    align-items: center;
+    /* Vertical center */
+    justify-content: center;
+    /* Horizontal center */
+    width: 32px;
+    /* Match the icon/image size */
+    height: 32px;
+    overflow: hidden;
+    /* Ensures nothing spills out */
+}
+
+/* Ensure the image takes up the full wrapper space */
+.profile-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    /* border: 1px solid var(--brand-green-primary); */
+    display: block;
+    /* Removes extra bottom whitespace */
+}
+
+/* Ensure the icon font-size matches the wrapper exactly */
+.profile-icon-placeholder {
+    font-size: 32px;
+    display: block;
+    color: var(--brand-green-primary);
+}
+
+.profile-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #333;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsive: Hide name on mobile to save space */
+@media (max-width: 768px) {
+    .profile-name {
+        display: none;
+    }
+
+    .nav-right {
+        margin: 0;
+    }
+
+    .user-profile {
+        padding: 0;
+    }
+}

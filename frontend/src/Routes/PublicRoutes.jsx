@@ -10,6 +10,7 @@ import HeritageDetails from '../Pages/HeritageDetails/HeritageDetails'; // Examp
 import BuyHeritage from '../Pages/HeritageDetails/BuyHeritage'; // Example private route
 import Payment from '../Pages/HeritageDetails/Payment'; // Example private route
 import PageNotFound from '../Pages/ErrorHandling/PageNotFound';
+import Profile from '../Pages/Profile/Profile';
 
 const PublicRoutes = () => {
     return (
@@ -59,8 +60,13 @@ const PublicRoutes = () => {
                 />
 
                 <Route
+                    path='/profile'
+                    element={<Profile />}
+                />
+
+                <Route
                     path="*"
-                    element={<PageNotFound/>}
+                    element={<PageNotFound />}
                 />
             </Routes>
         </div>

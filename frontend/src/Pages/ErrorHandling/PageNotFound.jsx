@@ -10,7 +10,7 @@ const PageNotFound = () => {
     const { t } = useTranslation();
 
     const errorCode = location.state?.code || "404";
-    const errorColor = t(`error.${errorCode}.color`, "#4c7c14");
+    const errorColor = t(`error.${errorCode}.color`);
     const bgColor = errorCode === "403" ? "#fff5f5" : errorCode === "500" ? "#f0f7ff" : "#f4f9ed";
 
     return (

@@ -1,38 +1,52 @@
 /* PageNotFound.css */
 
+:root {
+    /* Adjust this value to match your actual Navbar height */
+    --navbar-height: 70px;
+}
+
 .not-found-container {
-    height: 100vh;
+    /* Ensures the page fills exactly the space between Navbar and Footer */
+    min-height: calc(100vh - var(--navbar-height));
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
-    background: linear-gradient(135deg,
-            var(--brand-green-softer),
-            var(--bg-color));
+    padding: 1.5rem;
+    /* background: linear-gradient(135deg,
+            var(--brand-green-softer, #f4f9ed),
+            var(--bg-color, #ffffff)); */
+    box-sizing: border-box;
+    overflow: hidden;
+    /* Prevents scrollbars during animations */
 }
 
 [data-theme='dark'] .not-found-container {
-    background: linear-gradient(135deg,
-            #0f1a18,
-            var(--bg-color));
+    background: linear-gradient(135deg, #0f1a18, var(--bg-color, #121212));
 }
 
 .not-found-content {
-    max-width: 1100px;
+    max-width: 1000px;
     width: 100%;
+    /* Prevents the card from becoming taller than the screen */
+    max-height: calc(95vh - var(--navbar-height));
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 2.5rem;
     align-items: center;
-    background-color: var(--card-bg);
+    /* background-color: transparent; */
     border-radius: 24px;
-    padding: 3rem;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+    /* box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08); */
     animation: fadeUp 0.6s ease forwards;
+    box-sizing: border-box;
+    overflow-y: auto;
+    /* Adds internal scroll ONLY if content exceeds max-height */
 }
 
 [data-theme='dark'] .not-found-content {
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    background-color: #1e1e1e;
 }
 
 /* SVG Section */
@@ -44,7 +58,7 @@
 
 .not-found-svg {
     width: 100%;
-    max-width: 420px;
+    max-width: 380px;
     height: auto;
     animation: float 4s ease-in-out infinite;
 }
@@ -53,21 +67,24 @@
 .not-found-text {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    justify-content: center;
+    gap: 0.75rem;
 }
 
 .error-code {
-    font-size: 10rem;
-    font-weight: 700;
+    /* Fluid typography: shrinks on smaller screens */
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: 800;
     margin: 0;
+    line-height: 1;
 }
 
 .error-message {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: 400;
-    color: var(--text-color);
-    opacity: 0.9;
-    max-width: 420px;
+    color: var(--text-color, #333);
+    opacity: 0.8;
+    /* max-width: 400px; */
     margin: 0;
     text-align: left;
 }
@@ -75,21 +92,33 @@
 /* Buttons */
 .button-group {
     display: flex;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
     flex-direction: column;
+    /* gap: 12px;
+    margin-top: 1.5rem; */
+    width: 100%;
+    /* max-width: 300px; */
+    /* Keeps buttons from stretching too wide */
 }
 
 .btn-home,
 .btn-back {
-    transition: var(--transition-hover);
-    min-width: 100px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.secondary-btn.btn-back {
+    background: transparent;
+    border: 1px solid #ddd;
+    color: #555;
 }
 
 [data-theme='dark'] .btn-back {
-    color: var(--brand-green-light);
+    color: var(--brand-green-light, var(--brand-green-primary));
+    border-color: #444;
 }
 
 /* Animations */
@@ -106,24 +135,38 @@
 }
 
 @keyframes float {
-    0% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-12px);
-    }
-
-    100% {
-        transform: translateY(0);
+        transform: translateY(-15px);
     }
 }
 
-/* Responsive */
+/* Responsive Logic */
 @media (max-width: 900px) {
     .not-found-content {
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .not-found-container {
+        padding: 1rem;
+        overflow-y: auto;
+        /* Allows page scroll on mobile if content is long */
+    }
+
+    .not-found-content {
         grid-template-columns: 1fr;
+        /* Stack vertically */
         text-align: center;
+        max-height: none;
+        padding: 2rem 1.5rem;
     }
 
     .not-found-text {
@@ -131,10 +174,15 @@
     }
 
     .error-message {
-        max-width: 100%;
+        text-align: center;
+    }
+
+    .not-found-svg {
+        max-width: 220px;
+        /* Smaller SVG to keep buttons visible on screen */
     }
 
     .button-group {
-        justify-content: center;
+        margin: 1.5rem auto 0;
     }
 }

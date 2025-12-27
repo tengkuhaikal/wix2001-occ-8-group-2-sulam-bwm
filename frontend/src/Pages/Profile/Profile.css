@@ -1,0 +1,196 @@
+.profile-page-container {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 80vh;
+}
+
+.profile-card {
+    width: 100%;
+    max-width: 700px;
+    border-radius: var(--border-radius);
+    /* Matches your modern UI style */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-light);
+}
+
+.profile-header {
+    background-color: var(--brand-green-softer);
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 15px;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--bg-color);
+    background-color: var(--bg-color);
+}
+
+.avatar-edit-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--brand-green-primary);
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.user-full-name {
+    margin: 10px 0 5px;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.user-badge {
+    background-color: var(--brand-green-primary);
+    color: white;
+    padding: 4px 12px;
+    border-radius: var(--border-radius-hover);
+    /* Using your 999px variable */
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.profile-body {
+    padding: 30px;
+}
+
+.section-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.section-title-row h3 {
+    margin: 0;
+    color: var(--brand-green-primary);
+    font-size: 1.2rem;
+}
+
+.action-toggle-btn {
+    background-color: transparent;
+    border: 1px solid var(--brand-green-primary);
+    color: var(--brand-green-primary);
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.action-toggle-btn:hover {
+    background-color: var(--brand-green-primary);
+    color: white;
+    border-radius: var(--border-radius-hover);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    /* gap: 8px; */
+}
+
+.input-field label {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.input-field input {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-light);
+    padding: 12px;
+    border-radius: var(--border-radius);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+    margin: 0;
+}
+
+.input-field input:focus {
+    outline: none;
+    border-color: var(--brand-green-primary);
+}
+
+.input-field input:disabled {
+    background-color: transparent;
+    border-color: transparent;
+    font-weight: 600;
+    padding-left: 0;
+    cursor: default;
+}
+
+.danger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: transparent;
+    color: #d93025;
+    /* Standard accessibility-friendly red */
+    border: 1px solid #d93025;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-family: inherit;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+    /* Makes it fit the sidebar or a container */
+    margin-top: 10px;
+}
+
+.danger-btn:hover {
+    background-color: #fce8e6;
+    /* Very light red background */
+    border-radius: var(--border-radius-hover);
+    /* Switches to pill shape on hover */
+    color: #a50e0e;
+    border-color: #a50e0e;
+    /* transform: translateY(-1px); */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card {
+        border-radius: 0;
+    }
+}

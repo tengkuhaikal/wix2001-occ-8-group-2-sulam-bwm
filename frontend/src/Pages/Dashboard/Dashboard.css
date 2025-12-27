@@ -154,6 +154,7 @@
     padding: 8px 16px;
     border-radius: 8px;
     border: none;
+    color: var(--brand-green-primary);
     background-color: rgba(0, 0, 0, 0.05);
     font-size: 14px;
     font-weight: 500;
