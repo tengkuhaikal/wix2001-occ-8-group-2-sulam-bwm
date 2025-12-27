@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import "./Register.css";
 
 const Login = () => {
@@ -13,6 +14,14 @@ const Login = () => {
     const [lastName, setLastName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [dob, setDob] = useState("");
+
+    // States for password visibility
+    const [showPassword, setShowPassword] = useState(false);
+
+    // States for inputs
+    const [password, setPassword] = useState("");
+
+    const togglePasswordVisibility = () => setShowPassword(!showPassword);
 
     return (
         <div className="register-container">
@@ -30,12 +39,25 @@ const Login = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-                    <input
-                        type="password"
-                        placeholder={t('placeholder_pwd')}
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                    />
+                    <div className="password-wrapper">
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            placeholder={t('placeholder_pwd')}
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+
+                        {password && (
+
+                            <button
+                                type="button"
+                                className="eye-button"
+                                onClick={togglePasswordVisibility}
+                            >
+                                {!showPassword ? <IoEyeOffOutline /> : <IoEyeOutline />}
+                            </button>
+                        )}
+                    </div>
 
 
                     <button type="submit" className="primary-btn" onClick={() => navigate("/dashboard")}>
